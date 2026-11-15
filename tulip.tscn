@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://seah2pwqeu06"]
+
+[ext_resource type="Texture2D" uid="uid://b20u4gm0axjcb" path="res://6591e737-c81b-4a82-9319-7be579c22e04_removalai_preview.png" id="1_qf3bb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t4jn"]
+radius = 72.02777
+
+[node name="tulip" type="Area2D" unique_id=749578529 groups=["tulip"]]
+scale = Vector2(0.9, 0.9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701160401]
+position = Vector2(-3.333343, -2.2222292)
+scale = Vector2(0.5555556, 0.5555556)
+shape = SubResource("CircleShape2D_2t4jn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=724591181]
+position = Vector2(-8.888892, 8.106232e-06)
+texture = ExtResource("1_qf3bb")

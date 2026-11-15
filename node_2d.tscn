@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://dgemna2cprj7k" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bn2x4s44xek31" path="res://a2f4bb20-7c74-4eb9-8315-484052763634_removalai_preview.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://b20u4gm0axjcb" path="res://6591e737-c81b-4a82-9319-7be579c22e04_removalai_preview.png" id="3_epypp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
+radius = 140.0
+
+[node name="Node2D" type="Node2D" unique_id=510383679]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=617190930]
+position = Vector2(195, 220)
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1899792159]
+position = Vector2(195, 121)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wtcfe")
+
+[node name="PickupArea" type="Area2D" parent="Player" unique_id=712500153 groups=["tulip"]]
+position = Vector2(3, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupArea" unique_id=880419585]
+position = Vector2(166, 111)
+shape = SubResource("CircleShape2D_epypp")
+
+[node name="tulip" type="Area2D" parent="." unique_id=471010101]
+position = Vector2(838, 399)
+
+[node name="Sprite2D" type="Sprite2D" parent="tulip" unique_id=2016728171]
+position = Vector2(785, 320)
+texture = ExtResource("3_epypp")
+
+[connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
